@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT Modules (Filiere)>
+<!ELEMENT Filiere (Module+)>
+<!ELEMENT Module (matieres?,module_name,departement,teacher,Class_name)>
+<!ELEMENT module_name (#PCDATA)>
+<!ELEMENT departement (#PCDATA)>
+<!ELEMENT teacher (#PCDATA)>
+<!ELEMENT Class_name (#PCDATA)>
+<!ELEMENT matieres (matiere+)>
+<!ELEMENT matiere (nom)>
+<!ATTLIST Module code_module CDATA #REQUIRED>
+<!ATTLIST Filiere code_filiere CDATA #REQUIRED>
+
+

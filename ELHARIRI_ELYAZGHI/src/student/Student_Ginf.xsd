@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="Students">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Filiere"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Filiere">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="student"/>
+            </xs:sequence>
+            <xs:attribute name="code_filiere" use="required" type="xs:NCName"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="student">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="firstname"/>
+                <xs:element ref="lastname"/>
+                <xs:element ref="Date_of_Birth"/>
+                <xs:element ref="Class_name"/>
+                <xs:element ref="phone"/>
+                <xs:element ref="Email"/>
+            </xs:sequence>
+            <xs:attribute name="CNE" use="required" type="xs:integer"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="firstname" type="xs:NCName"/>
+    <xs:element name="lastname" type="xs:NCName"/>
+    <xs:element name="Date_of_Birth" type="xs:string"/>
+    <xs:element name="Class_name" type="xs:NCName"/>
+    <xs:element name="phone" type="xs:NMTOKEN"/>
+    <xs:element name="Email" type="xs:string"/>
+</xs:schema>

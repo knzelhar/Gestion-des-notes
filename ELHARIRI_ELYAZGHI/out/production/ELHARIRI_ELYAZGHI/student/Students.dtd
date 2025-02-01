@@ -1,0 +1,12 @@
+<!ELEMENT Students (Filiere)>
+<!ELEMENT Filiere (Student+)>
+<!ELEMENT Student (firstname,lastname,Date_of_Birth,Class_name,phone,email)> 
+<!ELEMENT firstname (#PCDATA)>
+<!ELEMENT lastname (#PCDATA)>
+<!ELEMENT Date_of_Birth (#PCDATA)>
+<!ELEMENT Class_name (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ATTLIST Filiere code_filiere CDATA #REQUIRED>
+<!ATTLIST Student code_apogee CDATA #REQUIRED>
+

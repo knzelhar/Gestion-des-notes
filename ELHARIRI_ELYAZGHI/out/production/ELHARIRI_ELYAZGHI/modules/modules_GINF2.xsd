@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="modules_GINF2.xsl"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="Modules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Filiere"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Filiere">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Module"/>
+      </xs:sequence>
+      <xs:attribute name="code_filiere" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Module">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Module_Name"/>
+        <xs:element ref="departement"/>
+        <xs:element ref="Teacher"/>
+        <xs:element ref="Class_name"/>
+        <xs:element ref="matieres"/>
+      </xs:sequence>
+      <xs:attribute name="code_module" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Module_Name" type="xs:string"/>
+  <xs:element name="departement" type="xs:NCName"/>
+  <xs:element name="Teacher" type="xs:string"/>
+  <xs:element name="Class_name" type="xs:NCName"/>
+  <xs:element name="matieres">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="matiere"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="matiere">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="nom"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="nom" type="xs:string"/>
+</xs:schema>
